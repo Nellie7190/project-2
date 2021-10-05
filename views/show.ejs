@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate-My-Instructor</title>
+</head>
+
+<body>
+    
+    <div>
+        <form action="/rate-my-instructor/<%= instructor._id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE INSTRUCTOR">
+        </form>
+
+        <% for(let i=0; i < instructor.length; i++) {%>
+            <h1>
+                <img src="<%=instructor[i].img%>" alt="<%=instructor.name%>"> <br>
+                    <%=instructor[i].name%>
+                        <%=instructor[i].title%>
+            </h1>
+            <!-- </div>
+                <div class='container'> -->
+
+            <%=instructor[i].rating%>
+                <%=instructor[i].review%>
+                    <%}%>
+    </div>
+    <div>
+        <%=instructor.name%> <br>
+        <%=instructor.title%> <br>
+        <img src="<%=instructor.img%>" alt="<%=instructor.name%>"> <br>
+        <div>
+            <% for(let i=0; i < reviews.length; i++) {%>
+                <%=reviews[i].rating%> <br>
+                <%=reviews[i].reviewDesc%> <br>
+            <%}%>
+        
+        </div>
+         <br>
+    </div>
+    <div>
+        <form action="/reviews/<%=instructor._id%>"  method="POST">
+        Rate 1-5<input type="number" name="rating" value="rating" min="1" max="5"><br><br>
+        <input type="text" name="reviewDesc" placeholder="reviewDesc">
+        <input type="submit" value="Add a Rating">
+        </form>
+    </div>
+
+
+</body>
+
+</html>
