@@ -13,10 +13,14 @@ const post = (req, res) => {
   })
 };
 
-const get = (req, res) => {
-    Instructor.findById(req.params.id, (err, foundInstructor) => {
-        res.json(foundInstructor.reviews);
+
+const put = (req, res) => {
+    Instructor.findByIdAndUpdate(req.params.id, (err, foundInstructor) => {
+        res.render('edit.ejs', {instructor: foundInstructor, review: foundInstructor.review});
     });
 };
 
-module.exports = {post};
+module.exports = {
+  post,
+  put,
+};

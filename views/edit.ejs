@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Edit your rating for: <br>
+        <%=instructor.name%> <br>
+        <br>
+        
+        Rate 1-5 <input type="Number" name="rating" min="1" max="5" value="<%=instructor.reviews.rating%>"><br>
+        <br>
+        <!-- inside a form action=PUT-->
+        <form action="/<%instructor.reviews._id%>/edit">
+            Why this rating?<br>
+            <textarea name="review" cols="30" rows="10" value="<%=instructor.reviews.reviewDesc%>"></textarea> <br>
+            <a href="/rate-my-instructor/<%=instructor.review%>"><button>Edit Rating</button></a>
+        </form>
+        <form action="/rate-my-instructor/<%= instructor.reviews_id%>?_method=DELETE" method="POST">
+            <input type="submit" name="delete" value="Delete Rating">
+        </form>
+ </h1> 
+        <%instructor.reviews.forEach(review => {%>
+
+        <%})%>
+        
+</form>
+</body>
+</html>

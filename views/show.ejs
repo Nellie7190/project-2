@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
     <title>Rate-My-Instructor</title>
 </head>
 
@@ -12,21 +14,22 @@
     
     <div>
         <form action="/rate-my-instructor/<%= instructor._id%>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE INSTRUCTOR">
+        <input class="del" type="submit" value="DELETE INSTRUCTOR">
+        <!-- <('del').click(function()>
+            <alert.('Are you sure you want to delete this instructor?')>
+        }) -->
         </form>
 
-        <% for(let i=0; i < instructor.length; i++) {%>
-            <h1>
+        <h1>
+            <% for(let i=0; i < instructor.length; i++) {%>
                 <img src="<%=instructor[i].img%>" alt="<%=instructor.name%>"> <br>
                     <%=instructor[i].name%>
                         <%=instructor[i].title%>
-            </h1>
-            <!-- </div>
-                <div class='container'> -->
+        </h1>
 
             <%=instructor[i].rating%>
                 <%=instructor[i].review%>
-                    <%}%>
+            <%}%>
     </div>
     <div>
         <%=instructor.name%> <br>
@@ -36,14 +39,33 @@
             <% for(let i=0; i < reviews.length; i++) {%>
                 <%=reviews[i].rating%> <br>
                 <%=reviews[i].reviewDesc%> <br>
+
+                <!-- EDIT REVIEW not working -->
+                <form action="/rate-my-instructor/<%=instructor._id%>/edit" method="GET">
+                <input type="submit" value="Edit Review">
+                </form>
+
             <%}%>
         
         </div>
          <br>
     </div>
     <div>
+        <!-- Add review -->
         <form action="/reviews/<%=instructor._id%>"  method="POST">
-        Rate 1-5<input type="number" name="rating" value="rating" min="1" max="5"><br><br>
+
+            <!-- star system instead of 1-5 -->
+        <div class="rating">
+            Rate 1-5
+            <input  type="radio" name="star" id="star1"><label for="star1"></label>
+            <input  type="radio" name="star" id="star2"><label for="star2"></label>
+            <input  type="radio" name="star" id="star3"><label for="star3"></label>
+            <input  type="radio" name="star" id="star4"><label for="star4"></label>
+            <input  type="radio" name="star" id="star5"><label for="star5"></label>
+        </div>
+        <br><br>
+
+        <!-- write review description -->
         <input type="text" name="reviewDesc" placeholder="reviewDesc">
         <input type="submit" value="Add a Rating">
         </form>

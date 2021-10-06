@@ -41,12 +41,24 @@ const create = (req, res) => {
 
 //EDIT
 const edit = (req, res) => {
-    res.send('this is the EDIT route');
+    // Instructor.findById()
+    // .populate('reviews')
+    // .then((foundReviews) => {
+    //     res.render('edit.ejs', {review: foundReviews})
+    // })
+    console.log('first console log works');
+    Instructor.findById(req.params.id, (err, foundInstructor) => {
+        res.render('edit.ejs', {
+            instructor: foundInstructor,
+            // reviews: foundInstructor.reviews,
+        });
+    });
 };
 
 //SHOW
 const show = (req, res) => {
     Instructor.findById(req.params.id, (err, foundInstructor) => {
+        console.log(foundInstructor);
             res.render('show.ejs', { instructor: foundInstructor, reviews: foundInstructor.reviews });
         });
 };

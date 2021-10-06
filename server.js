@@ -49,11 +49,10 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 /////ROUTES==========
 //___________________
 const instructorRouter = require('./routes/instructors');
+const reviewRouter = require('./routes/reviews');
 
 //replace app with instructorRouter
 app.use('/rate-my-instructor', instructorRouter);
-
-const reviewRouter = require('./routes/reviews');
 app.use('/reviews', reviewRouter);
 
 //___________________
