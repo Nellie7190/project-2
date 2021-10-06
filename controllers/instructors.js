@@ -1,6 +1,5 @@
 //Require Schemas
 const Instructor = require('../models/instructor');
-const Review = require('../models/review');
 
 
 //INDEX
@@ -57,10 +56,11 @@ const edit = (req, res) => {
 
 //SHOW
 const show = (req, res) => {
-    Instructor.findById(req.params.id, (err, foundInstructor) => {
-        console.log(foundInstructor);
-            res.render('show.ejs', { instructor: foundInstructor, reviews: foundInstructor.reviews });
-        });
+    Instructor.findById(req.params.id) 
+    .populate('reviews')
+    .then((foundInstructor) => {
+        res.render('show.ejs', {instructor: foundInstructor, reviews: foundInstructor.reviews})
+    })
 };
 
 module.exports = {

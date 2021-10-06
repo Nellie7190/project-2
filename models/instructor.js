@@ -2,19 +2,12 @@ const mongoose = require('mongoose');
 
 const{Schema} = mongoose;
 
-const reviewSchema = new Schema (
-    {
-        rating: {type: Number, required: true},
-        reviewDesc: {type: String, required: true},
-    }
-);
-
 const instructorSchema = new Schema (
     {
         name: {type: String, required: true},
         title: {type: String, required: true},
         img: {type: String, required: true},
-        reviews: [reviewSchema],
+        reviews: [{ type: Schema.Types.ObjectId, ref: "Review" }]
     },
     {
         timestamps: true

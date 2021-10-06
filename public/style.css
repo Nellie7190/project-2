@@ -1,22 +1,33 @@
-.rating {
+/* .rating {
+    display: block;
+    cursor: pointer;
+    width: 50px;
+    background: #ccc;
+    
+} */
+
+.rating  {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: auto;
+    background: #262626;
+    position: absolute;
+    display: flex;
+}
+.rating label {
+
     display: block;
     cursor: pointer;
     width: 50px;
     background: #ccc;
 }
+.rating label:before {
 
-/* .rating input {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-} */
-/* .rating label:before {
     content: \f005;
     font-family: fontAwesome;
     position: relative;
     display: block;
     font-size: 50px;
     color: #101010;
-} */
+}

@@ -1,25 +1,30 @@
+const Review = require('../models/review');
 const Instructor = require('../models/instructor');
 
 //SHOW
 const post = (req, res) => {
     Instructor.findById(req.params.id)
   .then((foundInstructor)=>{
-      foundInstructor.reviews.push(req.body);
-      foundInstructor.save();
-      console.log(foundInstructor);
+      Review.create(req.body)
+      .then((singleReview) => {
+        console.log(singleReview._id)
+        foundInstructor.reviews.push(singleReview._id);
+        foundInstructor.save();
+        // console.log(foundInstructor);
+      })
   })
   .then(()=>{
-    res.redirect(`/rate-my-instructor/${req.params.id}`)
+    setTimeout(() => {res.redirect(`/rate-my-instructor/${req.params.id}`)}, 100);
   })
 };
 
-
+//EDIT
 const put = (req, res) => {
-    Instructor.findByIdAndUpdate(req.params.id, (err, foundInstructor) => {
-        res.render('edit.ejs', {instructor: foundInstructor, review: foundInstructor.review});
+    Review.findById(req.params.id, (err, foundReview) => {
+      console.log(foundReview)
+      res.render('edit.ejs', {review: foundReview});
     });
 };
-
 module.exports = {
   post,
   put,
