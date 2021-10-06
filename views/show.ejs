@@ -41,9 +41,12 @@
                 <%=reviews[i].reviewDesc%> <br>
 
                 <!-- EDIT REVIEW not working -->
+                <%/*%>
                 <form action="/reviews/<%=reviews[i]._id%>/edit" method="GET">
                     <input type="submit" value="Edit Review">
                 </form>
+                <%*/%>
+                <a href="/reviews/<%=reviews[i]._id%>/edit">Edit This Review</a>
 
             <%}%>
         
