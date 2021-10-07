@@ -21,7 +21,7 @@ const newI = (req, res) => {
 const destroy = (req, res) => {
     Instructor.findByIdAndRemove(req.params.id,
         (err, data) => {
-            res.redirect('/rate-my-instructor');
+            res.redirect('/');
         });
 };
 
@@ -40,7 +40,7 @@ const update = (req, res) => {
 const create = (req, res) => {
     Instructor.create(req.body, (error, createdInstructor) => {
         console.log(createdInstructor);
-        res.redirect('/rate-my-instructor');
+        res.redirect('/');
     });
 };
 

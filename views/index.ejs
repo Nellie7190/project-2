@@ -11,7 +11,7 @@
     <h1 class="h1-tag">Rate My Instructor</h1>
     <div>
         <h2>
-           <a href="/rate-my-instructor/new">
+           <a href="/new">
             Add a New Instructor!
             </a> 
         </h2>
@@ -19,7 +19,7 @@
     <table>
         <tr>
             <%instructors.forEach(instructor => {%>
-                <a href="/rate-my-instructor/<%=instructor._id%>"><img src="<%=instructor.img%>" alt=instructor.name></a>
+                <a href="/<%=instructor._id%>"><img src="<%=instructor.img%>" alt=instructor.name></a>
                 <br />
                 <h2><%=instructor.name%> <%=instructor.title%>
                 </h2>

@@ -52,7 +52,7 @@ const instructorRouter = require('./routes/instructors');
 const reviewRouter = require('./routes/reviews');
 
 //replace app with instructorRouter
-app.use('/rate-my-instructor', instructorRouter);
+app.use('/', instructorRouter);
 app.use('/reviews', reviewRouter);
 
 //___________________

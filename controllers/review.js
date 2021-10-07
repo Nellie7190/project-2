@@ -7,7 +7,7 @@ const deleteReview = (req, res) => {
   Review.findByIdAndRemove(req.params.id, req.body)
   .then((deleteReview) => {
     console.log(req.params)
-    res.redirect(`/rate-my-instructor/${req.params.instructorId}`)
+    res.redirect(`/${req.params.instructorId}`)
   })
 }
 
@@ -16,7 +16,7 @@ const update = (req, res) => {
   Review.findByIdAndUpdate(req.params.id, req.body)
   .then((updatedReview) => {
     console.log(req.params)
-    res.redirect(`/rate-my-instructor/${req.params.instructorId}`)
+    res.redirect(`/${req.params.instructorId}`)
   })
 };
 
@@ -34,7 +34,7 @@ const post = (req, res) => {
       })
   })
   .then(()=>{
-    setTimeout(() => {res.redirect(`/rate-my-instructor/${req.params.id}`)}, 100);
+    setTimeout(() => {res.redirect(`/${req.params.id}`)}, 100);
   })
 };
 
