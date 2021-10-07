@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const{Schema} = mongoose;
 const reviewSchema = new Schema (
     {
-        rating: {type: Number, required: true},
+        rating: {type: String, required: true},
         reviewDesc: {type: String, required: true},
     }
 );

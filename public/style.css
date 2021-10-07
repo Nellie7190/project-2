@@ -7,7 +7,12 @@
 } */
 
 *{
-    background-color: rgb(236, 236, 117);
+    /* font-family: ; */
+}
+
+.h1-tag {
+    background-color: teal;
+    text-align: center;
 }
 .rating  {
     margin: 0;
@@ -33,4 +38,7 @@
     display: block;
     font-size: 50px;
     color: #101010;
+}
+#created-at {
+    font-size: 15px;
 }

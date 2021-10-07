@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrap.com/font-awesome.min.css" rel="stylesheet"> -->
     <title>Rate-My-Instructor</title>
 </head>
 
@@ -26,10 +25,11 @@
                     <%=instructor[i].name%>
                         <%=instructor[i].title%>
         </h1>
-            <!-- SHOW rating and reviews -->
-            <%=instructor[i].rating%>
-                <%=instructor[i].review%>
-            <%}%>
+         <h2>
+             <%=instructor[i].rating%>
+                 <%=instructor[i].review%>
+             <%}%>
+         </h2>   <!-- SHOW rating and reviews -->
     </div>
     <div>
         <%=instructor.name%> <br>
@@ -56,17 +56,25 @@
             <!-- star system instead of 1-5 -->
             Rate 1-5
             
-            <div class="rating">
+            <!-- <div class="rating">
                 <input  type="radio" name="star" id="star1"><label for="star1"></label>
                 <input  type="radio" name="star" id="star2"><label for="star2"></label>
                 <input  type="radio" name="star" id="star3"><label for="star3"></label>
                 <input  type="radio" name="star" id="star4"><label for="star4"></label>
                 <input  type="radio" name="star" id="star5"><label for="star5"></label>
             </div>
-        <br><br>
+        <br><br> -->
+
+        <select name="rating" id="stars">
+            <option value="⭐️">⭐️</option>
+            <option value="⭐️⭐️">⭐️⭐️</option>
+            <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
+            <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
+            <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
+        </select>
 
         <!-- ADD rating and write review description -->
-        Add Rating 1-5<input type="number" name = rating min="1" max="5"> <br>
+        <!-- Add Rating 1-5<input type="number" name = rating min="1" max="5"> <br> -->
         <br>
         <input type="text" name="reviewDesc" placeholder="reviewDesc"> <br>
         <br>
