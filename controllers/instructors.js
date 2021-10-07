@@ -27,7 +27,13 @@ const destroy = (req, res) => {
 
 //UPDATE
 const update = (req, res) => {
-    res.send('this is the UPDATE route');
+    // Instructor.findByIdAndUpdate(req.params.id, req.body, {
+    //     new: true,
+    // }, (error, updatedInstructor) => {
+    //     res.redirect(`/rate-my-instructor/${req.params.id}`)
+    // })
+    // console.log(instructors.reviews)
+    res.send('this is the UPDATE INSTRUCTOR ROUTE')
 };
 
 //CREATE

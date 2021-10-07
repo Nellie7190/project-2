@@ -26,7 +26,7 @@
                     <%=instructor[i].name%>
                         <%=instructor[i].title%>
         </h1>
-
+            <!-- SHOW rating and reviews -->
             <%=instructor[i].rating%>
                 <%=instructor[i].review%>
             <%}%>
@@ -40,14 +40,10 @@
                 <%=reviews[i].rating%> <br>
                 <%=reviews[i].reviewDesc%> <br>
 
-                <!-- EDIT REVIEW not working -->
-                <%/*%>
-                <form action="/reviews/<%=reviews[i]._id%>/edit" method="GET">
-                    <input type="submit" value="Edit Review">
-                </form>
-                <%*/%>
-                <a href="/reviews/<%=reviews[i]._id%>/edit">Edit This Review</a>
-
+                <!-- EDIT REVIEW working -->
+                
+                <a href="/reviews/<%=reviews[i]._id%>/<%=instructor._id%>/edit"><button>Edit This Review</button></a> <br>
+                <br>
             <%}%>
         
         </div>
@@ -61,15 +57,15 @@
             Rate 1-5
             
             <div class="rating">
-            <input  type="radio" name="star" id="star1"><label for="star1"></label>
-            <input  type="radio" name="star" id="star2"><label for="star2"></label>
-            <input  type="radio" name="star" id="star3"><label for="star3"></label>
-            <input  type="radio" name="star" id="star4"><label for="star4"></label>
-            <input  type="radio" name="star" id="star5"><label for="star5"></label>
-        </div>
+                <input  type="radio" name="star" id="star1"><label for="star1"></label>
+                <input  type="radio" name="star" id="star2"><label for="star2"></label>
+                <input  type="radio" name="star" id="star3"><label for="star3"></label>
+                <input  type="radio" name="star" id="star4"><label for="star4"></label>
+                <input  type="radio" name="star" id="star5"><label for="star5"></label>
+            </div>
         <br><br>
 
-        <!-- write review description -->
+        <!-- ADD rating and write review description -->
         Add Rating 1-5<input type="number" name = rating min="1" max="5"> <br>
         <br>
         <input type="text" name="reviewDesc" placeholder="reviewDesc"> <br>
