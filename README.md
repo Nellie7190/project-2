@@ -12,6 +12,7 @@ Rate-My-Instructor
 -MongoDB
 -EJS
 -Express
+-Heroku
 
 ## Wireframe:
 
@@ -22,3 +23,11 @@ Rate-My-Instructor
 ![RateMyInstructorWireframe](image/edit-page.png)
 
 ![RateMyInstructorWireframe](image/create-page.png)
+
+## Next Steps:
+
+-Add User Authentication
+-Add Search Bar
+-Change Star Ratings 
+-Add Avg Star Rating
+-Sort By Star Rating
