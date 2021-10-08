@@ -8,12 +8,29 @@
 
 *{
     font-family: 'Indie Flower', Arial, Helvetica, sans-serif;
+    font-size: 20px;
     text-align: left;
+    font-weight: bolder;
+    outline-color: black;
+    /* color: black; */
+    color: goldenrod;
+    text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+     letter-spacing: 1px;
+    
 }
 
-body {
-    width: 100%;
+.ga-image{
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnLN0I_L59k9Z2pABqrDztujVJNTPn-2MrrCVHXWIKfAak8sgNRBxyBTOfCFtJBKwFUiI&usqp=CAU");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    opacity: 0.9;
 }
+
 .h1-tag {
     text-align: center;
     font-size: 70px;
@@ -22,8 +39,6 @@ body {
     display: center, flex;
     margin: 0 auto;
     text-decoration: underline goldenrod;
-    /* filter: drop-shadow(5px 5px 25px black); */
-    /* text-align: center, flex; */
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
     color: white;
@@ -32,18 +47,9 @@ body {
 nav {
     background-color: goldenrod;
     text-align: right;
-    color: teal;
     margin-top: -20px;
 }
-nav a {
-    margin-right: 20px;
-}
 
-/* #comment {
-    height: 500px;
-    width: 500px;
-
-} */
 input[type="text"] {
     word-wrap: normal;
     word-break: break-all;
@@ -61,14 +67,53 @@ input[type="text"] {
     justify-content: space-around;
     text-align: center;
 }
+
+.name-and-title {
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+.btn, #edit-review-btn {
+    font-size: x-large;
+    text-align: center;
+    font-weight: bolder;
+    color: teal;
+    background-color: goldenrod;
+}
+
 .new-buttons {
     font-size: xx-large;
     font-weight: bolder;
 }
 
+a{
+    display: block;
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    padding: 10px;
+    letter-spacing: 2px;
+    transition: all .25s;
+    text-align: center;
+  }
+  
+  a:hover{
+    letter-spacing: 15px;
+  }
+
 #new-rating {
-    text-align: right;
+    text-align: justify;
 }
+
+#reviews {
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+    letter-spacing: 3px;
+}
+
 input[type="textarea"] {
     height: 100px;
     width: 100px;
@@ -83,7 +128,16 @@ img {
     width: 500px;
 }
 
+.letter-space {
+    letter-spacing: 3px;
+}
 
+@media screen and (max-width: 425px) {
+    img {
+        height: 200px;
+        width:  200px;
+    }
+}
 
 
 /* .rating  {

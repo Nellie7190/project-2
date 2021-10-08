@@ -20,10 +20,10 @@
             <tr> -->
                 <%instructors.forEach(instructor => {%>
                     <div>
-                    <a href="/<%=instructor._id%>"><img src="<%=instructor.img%>" alt=instructor.name></a>
+                    <a  href="/<%=instructor._id%>"><img src="<%=instructor.img%>" alt=instructor.name></a>
 
                     <br />
-                    <h2><%=instructor.name%> : <%=instructor.title%>
+                    <h2 class="name-and-title">  <%=instructor.name%>: <%=instructor.title%>
                     </h2>
                     
                     <h3 id="created-at">Created at: <%=instructor.createdAt%></h3>

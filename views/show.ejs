@@ -8,10 +8,13 @@
 </head>
 
 <body>
-
+    <h1 class="h1-tag">
+        ✏️ <%=instructor.name%>'s Reviews%> ✏️
+    </h1>
+<h2>
     <div>
         <form action="/<%= instructor._id%>?_method=DELETE" method="POST">
-            <input class="del" type="submit" value="DELETE INSTRUCTOR">
+            <input class="btn" type="submit" value="DELETE INSTRUCTOR">
             <!-- <('del').click(function()>
             <alert.('Are you sure you want to delete this instructor?')>
         }) -->
@@ -20,63 +23,64 @@
     </div>
     <!-- SHOWS instructor info -->
     <div>
-        <%=instructor.name%> <br>
-            <%=instructor.title%> <br>
-                <img src="<%=instructor.img%>" alt="<%=instructor.name%>"> <br>
 
 
-                <div>
-                    <!-- Add review -->
-                    <form action="/reviews/<%=instructor._id%>" method="POST">
-
-                        <!-- star system instead of 1-5 -->
-                        Rate 1-5
-
-                        <!-- <div class="rating">
-                    <input  type="radio" name="star" id="star1"><label for="star1"></label>
-                    <input  type="radio" name="star" id="star2"><label for="star2"></label>
-                    <input  type="radio" name="star" id="star3"><label for="star3"></label>
-                    <input  type="radio" name="star" id="star4"><label for="star4"></label>
-                    <input  type="radio" name="star" id="star5"><label for="star5"></label>
-                </div>
-            <br><br> -->
-
-                        <div id="new-rating">
-                            <select name="rating" id="stars">
-                                <option value="⭐️">⭐️</option>
-                                <option value="⭐️⭐️">⭐️⭐️</option>
-                                <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
-                                <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
-                                <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
-                            </select>
-                            <br>
-                            <!-- The comment box -->
-                            <br>
-                            <input type="textarea" name="reviewDesc" placeholder="Your comment"> <br>
-                            <br>
-                            <input type="submit" value="Add Review"> <br>
-                        </div>
-
-                    </form>
-                </div>
-
-
-                <div>
+        <table>
+            <tr>
+                <td>
+                    <%=instructor.name%> <br>
+                        <%=instructor.title%> <br>
+                            <img src="<%=instructor.img%>" alt="<%=instructor.name%>"> <br>
+                </td>
+                <td id="reviews">
                     <% for(let i=0; i < reviews.length; i++) {%>
                         <%=reviews[i].rating%> <br>
                             <%=reviews[i].reviewDesc%> <br>
-
                                 <!-- EDIT REVIEW BUTTON -->
-                                <a href="/reviews/<%=reviews[i]._id%>/<%=instructor._id%>/edit"><button>Edit This
-                                        Review</button></a> <br>
+                                <a id="Edit-review-btn" href="/reviews/<%=reviews[i]._id%>/<%=instructor._id%>/edit"><button >Edit This
+                                        Review</button></a>
                                 <br>
                                 <%}%>
+                </td>
+            </tr>
+            <tr>
+                <td>
 
-                </div>
-                <br>
+                    <div>
+                        <!-- Add review -->
+                        <form action="/reviews/<%=instructor._id%>" method="POST">
+
+                            <div id="new-rating">
+                                Rate 1-5
+                                <select name="rating" id="stars">
+                                    <option value="⭐️">⭐️</option>
+                                    <option value="⭐️⭐️">⭐️⭐️</option>
+                                    <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
+                                    <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
+                                    <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
+                                </select>
+                                <br>
+
+                                <!-- The comment box -->
+                                <br>
+                                <textarea name="reviewDesc" id="" cols="75" rows="10">MUST ADD COMMENT</textarea> <br>
+                                <br>
+                                <input class="btn" type="submit" value="Add Review"> <br>
+                            </div>
+
+                        </form>
+                    </div>
+                </td>
+            </tr>
+
+
+        </table>
+
+
+        <br>
     </div>
 
-
+</h2>
 </body>
 
 </html>
