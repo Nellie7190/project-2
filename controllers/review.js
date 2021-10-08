@@ -28,7 +28,7 @@ const post = (req, res) => {
       Review.create(req.body)
       .then((singleReview) => {
         // console.log(singleReview._id)
-        foundInstructor.reviews.push(singleReview._id);
+        foundInstructor.reviews.unshift(singleReview._id);
         foundInstructor.save();
         // console.log(foundInstructor);
       })

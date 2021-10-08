@@ -7,14 +7,86 @@
 } */
 
 *{
-    /* font-family: ; */
+    font-family: 'Indie Flower', Arial, Helvetica, sans-serif;
+    text-align: left;
 }
 
+body {
+    width: 100%;
+}
 .h1-tag {
+    text-align: center;
+    font-size: 70px;
     background-color: teal;
+    height: fit-content;
+    display: center, flex;
+    margin: 0 auto;
+    text-decoration: underline goldenrod;
+    /* filter: drop-shadow(5px 5px 25px black); */
+    /* text-align: center, flex; */
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    color: white;
+}
+
+nav {
+    background-color: goldenrod;
+    text-align: right;
+    color: teal;
+    margin-top: -20px;
+}
+nav a {
+    margin-right: 20px;
+}
+
+/* #comment {
+    height: 500px;
+    width: 500px;
+
+} */
+input[type="text"] {
+    word-wrap: normal;
+    word-break: break-all;
+    height: 80px;
+    resize: horizontal;
+}
+
+.container {
+    padding: 5 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* list-style-type: none; */
+    /* position: relative; */
+    justify-content: space-around;
     text-align: center;
 }
-.rating  {
+.new-buttons {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+#new-rating {
+    text-align: right;
+}
+input[type="textarea"] {
+    height: 100px;
+    width: 100px;
+}
+
+img {
+    min-width: inherit;
+    border: solid teal 5px;
+    border-radius: 5px;
+    filter: drop-shadow(5px 5px 5px black);
+    height: 500px;
+    width: 500px;
+}
+
+
+
+
+/* .rating  {
     margin: 0;
     padding: 0;
     height: auto;
@@ -33,7 +105,7 @@
 .rating label:before {
 
     content: \f005;
-    font-family: fontAwesome;
+    font-family: 'fontAwesome';
     position: relative;
     display: block;
     font-size: 50px;
@@ -41,4 +113,4 @@
 }
 #created-at {
     font-size: 15px;
-}
+} */

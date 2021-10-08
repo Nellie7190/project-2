@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <%- include('../partials/head.ejs')%>
     <title>Document</title>
 </head>
 <body>
     <h1>
         <div class="h1-tag">
-            Edit Your Review For <%=instructor.name%>
+            ✏️ Edit Your Review For <%=instructor.name%> ✏️
         </div>
         <br>
         <br>
@@ -30,7 +27,7 @@
             
             <!-- EDIT the review comment -->
             Edit your comment? <br>
-            <input type="text" name="reviewDesc" cols="30" rows="10" value="<%=review.reviewDesc%>">
+            <input id="comment" wrap="soft" type="text" name="reviewDesc" cols="30" rows="10" value="<%=review.reviewDesc%>">
 
             <!-- Btn to edit rating -->
                 <input type="submit" value="Edit Review">
