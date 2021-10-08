@@ -84,6 +84,7 @@ input[type="text"] {
 .new-buttons {
     font-size: xx-large;
     font-weight: bolder;
+    justify-content: space-evenly;
 }
 
 a{
